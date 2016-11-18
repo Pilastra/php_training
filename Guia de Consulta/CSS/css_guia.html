@@ -1,0 +1,933 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+
+
+<title>Propriedades CSS - Guia de Referência</title>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="content-language" content="pt-br">
+<meta name="robots" content="index,follow">
+<meta name="author" content="Aires Bento Pereira Filho">
+<meta name="description" content="Guia de Referênica CSS.">
+<meta name="keywords" content="CSS, Cascading Style Sheets, W3C, estilos, propriedades, criação de websites">
+<style type="text/css">
+<!--
+@import url(../estilos.css);
+td.propriedade {
+  width: 20%;
+}
+td.descricao {
+  width: 56%;
+}
+td.indicacao {
+  width: 7%;
+  font-size: 90%;
+}
+td.browser {
+  width: 10%;
+  font-size: 90%;
+}
+.caixaapoio {
+  width: 23%;
+}
+-->
+</style>
+
+<script type="text/javascript" src="css_guia_arquivos/menus.js">
+</script>
+<script type="text/javascript" src="css_guia_arquivos/gerais.js">
+</script>
+</head><body>
+<!-- CAIXA TOPO -->
+<div id="caixatopo"><a href="http://www.abpsoft.com/index.html"><img class="imglogo" src="css_guia_arquivos/logoabp.gif" alt="Logotipo Abpsoft" title=""></a>
+<div><!-- inicio do codigo da banner-link -->
+<script src="css_guia_arquivos/ads.htm" type="text/javascript">
+</script><p align="center"><a href="http://ads.banner-link.com.br/adslink.asp?conta=98367&amp;banner_id=99355" target="_blank"><img src="css_guia_arquivos/B99355v18.gif" alt="clique aqui!" width="468" border="0" height="60"></a><br><a href="http://www.banner-link.com.br/" target="_blank"><img src="css_guia_arquivos/r.gif" alt="by Banner-Link" width="468" border="0" height="16"></a></p>
+ <!-- fim do codigo da banner-link ===--></div>
+</div>
+<!-- MENU GERAL (HORIZONTAL) -->
+<script type="text/javascript">
+<!--
+criarMenu("geral","menuhorizontal","criacaoweb.html", 1);
+// -->
+</script><ul class="menuhorizontal"><li><a href="http://www.abpsoft.com/index.html">Página Inicial</a></li><li style="background-color: rgb(204, 102, 102);"><a href="http://www.abpsoft.com/criacaoweb/criacaoweb.html">Criação de Websites</a></li><li><a href="http://www.abpsoft.com/programacao/programacao.html">Noções de SQL</a></li><li><a href="http://www.abpsoft.com/downloads.html">Downloads</a></li><li><a href="http://www.abpsoft.com/links.html">Links úteis</a></li><li><a href="http://www.abpsoft.com/horacafe/horacafe.html">Hora do Café</a></li><li><a href="http://www.abpsoft.com/contato.html">Entrar em Contato</a></li></ul><!-- MENU DA SEÇÃO (VERTICAL) -->
+<script type="text/javascript">
+<!--
+criarMenu("criacaoweb","menuvertical","cssguiaref.html",1)
+// -->
+</script><ul class="menuvertical"><li style="background-color: rgb(153, 153, 102);">Tutoriais</li><li><a href="http://www.abpsoft.com/criacaoweb/htmlbasico.html">HTML Básico</a></li><li><a href="http://www.abpsoft.com/criacaoweb/cssbasico.html">CSS Básico</a></li><li><a href="http://www.abpsoft.com/criacaoweb/jsbasico.html">JavaScript Básico</a></li><li><a href="http://www.abpsoft.com/criacaoweb/xmlbasico.html">XML Básico</a></li><li style="background-color: rgb(153, 153, 102);">Guias de Referência</li><li><a href="http://www.abpsoft.com/criacaoweb/htmlguiaref.html">Elementos HTML</a></li><li style="background-color: rgb(51, 51, 204);"><a href="http://www.abpsoft.com/criacaoweb/cssguiaref.html">Propriedades CSS</a></li><li><a href="http://www.abpsoft.com/criacaoweb/cssguiarefselet.html">Seletores CSS</a></li><li><a href="http://www.abpsoft.com/criacaoweb/tabcores.html">Tabela de Cores HTML/CSS</a></li><li><a href="http://www.abpsoft.com/criacaoweb/tabcaractesp.html">Tabela de Caracteres Especiais</a></li><li><a href="http://www.abpsoft.com/criacaoweb/path.html">Como especificar o path</a></li></ul><!-- LINKS QUE LEVAM AOS TÓPICOS DA TABELA -->
+<div class="caixaapoio">
+<p class="cabecalhoa">Tópicos:</p>
+<ol>
+<li><a href="#fundo">Fundo</a></li>
+<li><a href="#bordas">Bordas</a></li>
+<li><a href="#contorno">Linhas de contorno</a></li>
+<li><a href="#margens">Margens</a></li>
+<li><a href="#padding">Espaço em branco (padding)</a></li>
+<li><a href="#exibicao">Classificação (forma de exibição)</a></li>
+<li><a href="#posicionamento">Posicionamento</a></li>
+<li><a href="#dimensionamento">Dimensionamento</a></li>
+<li><a href="#fonte">Fonte</a></li>
+<li><a href="#texto">Texto</a></li>
+<li><a href="#listas">Listas e marcadores</a></li>
+<li><a href="#tabelas">Tabelas</a></li>
+<li><a href="#geracaoconteudo">Geração de Conteúdo</a></li>
+</ol>
+</div>
+<!-- TÍTULO  e INTRODUÇÃO-->
+<h1>Propriedades CSS - Guia de Referência<br>
+<span>Por Aires Bento Pereira Filho</span></h1>
+<p>Estamos apresentando as propriedades CSS em 13 tópicos.</p>
+<p>As informações são as seguintes:</p>
+<ol>
+<li>a propriedade;</li>
+<li>descrição de sua finalidade;</li>
+<li>indicação se é herdada ou não;</li>
+<li>indicação da especificação CSS (CSS1 ou CSS2);</li>
+<li>versão do browser que a suporta (IE: Internet Explorer, F: Firefox, N: Netscape);</li>
+<li>Possíveis valores.</li>
+</ol>
+<table summary="" class="tabreferencia"><!--  FUNDO  -->
+<tbody><tr>
+<th colspan="5"><a name="fundo" id="fundo">1 - FUNDO</a></th>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">background</td>
+<td class="descricao">Define todos os parâmetros referentes ao fundo de um elemento. Aceita de 1 a 5 valores.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdada</td>
+<td class="indicacao" rowspan="2">CSS1</td>
+<td class="browser" rowspan="2">IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;6</td>
+</tr>
+<tr>
+<td>Valores: background-color | background-image | background-repeat | background-attachment | background-position</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">background-color</td>
+<td class="descricao">Define a cor de fundo de um elemento.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdada</td>
+<td class="indicacao" rowspan="2">CSS1</td>
+<td class="browser" rowspan="2">IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;4<br></td>
+</tr>
+<tr>
+<td>Valores: nomecor | #rrggbb | #rgb | rgb(d,d,d) | rgb(d%,d%,d%) | transparent</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">background-image</td>
+<td class="descricao">Define uma imagem como fundo de um elemento.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdada</td>
+<td class="indicacao" rowspan="2">CSS1</td>
+<td class="browser" rowspan="2">IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;4</td>
+</tr>
+<tr>
+<td>Valores: url | none</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">background-repeat</td>
+<td class="descricao">Define se a imagem vai repetir (formando um mosaico) ou não e a direção da repetição.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdada</td>
+<td class="indicacao" rowspan="2">CSS1</td>
+<td class="browser" rowspan="2">IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;4</td>
+</tr>
+<tr>
+<td>Valores: repeat | repeat-x | repeat-y | no-repeat</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">background-attachment</td>
+<td class="descricao">Define se a imagem de fundo de um elemento ficará fixa ou se irá rolar junto com o conteúdo.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdada</td>
+<td class="indicacao" rowspan="2">CSS1</td>
+<td class="browser" rowspan="2">IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;6</td>
+</tr>
+<tr>
+<td>Valores: scroll | fixed</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">background-position</td>
+<td class="descricao">Define o ponto onde inicia o desenho da imagem de fundo.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdada</td>
+<td class="indicacao" rowspan="2">CSS1</td>
+<td class="browser" rowspan="2">IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;6</td>
+</tr>
+<tr>
+<td>Valores: top left | top center | top right | center left | center center | center right | bottom left | bottom
+center | bottom right | x% y% | x unids_css y unids_css</td>
+</tr>
+<!--  BORDAS  -->
+<tr>
+<th colspan="5"><a name="bordas" id="bordas">2 - BORDAS</a></th>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">border</td>
+<td class="descricao">Define o estilo, a espessura e a cor das 4 bordas. Aceita de 1 a 3 valores.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdada</td>
+<td class="indicacao" rowspan="2">CSS1</td>
+<td class="browser" rowspan="2">IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;4</td>
+</tr>
+<tr>
+<td>Valores: border-style | border-width | border-color</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">border-top<br>
+border-right<br>
+border-bottom<br>
+border-left</td>
+<td class="descricao">Definem o estilo, a espessura e a cor das bordas superior, direita, inferior e esquerda. Aceitam
+de 1 a 3 valores.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdadas</td>
+<td class="indicacao" rowspan="2">CSS1</td>
+<td class="browser" rowspan="2">IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;6</td>
+</tr>
+<tr>
+<td>Valores: border-style | border-width | border-color</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">border-top-style<br>
+border-top-width<br>
+border-top-color</td>
+<td class="descricao">Definem o estilo, a espessura e a cor da borda superior. Aceitam de 1 a 3 valores.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdadas</td>
+<td class="indicacao" rowspan="2">CSS2<br>
+CSS1<br>
+CSS2</td>
+<td class="browser" rowspan="2">IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;6<br>
+IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;4<br>
+IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;6</td>
+</tr>
+<tr>
+<td>Valores: border-style | border-width | border-color</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">border-right-style<br>
+border-right-width<br>
+border-right-color</td>
+<td class="descricao">Definem o estilo, a espessura e a cor da borda direita. Aceitam de 1 a 3 valores.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdadas</td>
+<td class="indicacao" rowspan="2">CSS2<br>
+CSS1<br>
+CSS2</td>
+<td class="browser" rowspan="2">IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;6<br>
+IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;4<br>
+IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;6</td>
+</tr>
+<tr>
+<td>Valores: border-style | border-width | border-color</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">border-bottom-style<br>
+border-bottom-width<br>
+border-bottom-color</td>
+<td class="descricao">Definem o estilo, a espessura e a cor da borda inferior. Aceitam de 1 a 3 valores.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdadas</td>
+<td class="indicacao" rowspan="2">CSS2<br>
+CSS1<br>
+CSS2</td>
+<td class="browser" rowspan="2">IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;6<br>
+IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;4<br>
+IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;6</td>
+</tr>
+<tr>
+<td>Valores: border-style | border-width | border-color</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">border-left-style<br>
+border-left-width<br>
+border-left-color</td>
+<td class="descricao">Definem o estilo, a espessura e a cor da borda esquerda. Aceitam de 1 a 3 valores.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdadas</td>
+<td class="indicacao" rowspan="2">CSS2<br>
+CSS1<br>
+CSS2</td>
+<td class="browser" rowspan="2">IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;6<br>
+IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;4<br>
+IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;6</td>
+</tr>
+<tr>
+<td>Valores: border-style | border-width | border-color</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">border-style</td>
+<td class="descricao">Define o estilo das 4 bordas. Aceita de 1 a 4 valores.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdada</td>
+<td class="indicacao" rowspan="2">CSS1</td>
+<td class="browser" rowspan="2">IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;6</td>
+</tr>
+<tr>
+<td>Valores: none | hidden | dotted | dashed | solid | double | groove | ridge | inset | outset</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">border-width</td>
+<td class="descricao">Define a espessura das 4 bordas. Aceita de 1 a 4 valores.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdada</td>
+<td class="indicacao" rowspan="2">CSS1</td>
+<td class="browser" rowspan="2">IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;4</td>
+</tr>
+<tr>
+<td>Valores: thin | medium | thick | unids_css</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">border-color</td>
+<td class="descricao">Define a cor das 4 bordas. Aceita de 1 a 4 valores.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdada</td>
+<td class="indicacao" rowspan="2">CSS1</td>
+<td class="browser" rowspan="2">IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;6</td>
+</tr>
+<tr>
+<td>Valores: nomecor | #rrggbb | #rgb | rgb(d,d,d) | rgb(d%,d%,d%)</td>
+</tr>
+<!--  LINHAS DE CONTORNO  -->
+<tr>
+<th colspan="5"><a name="contorno" id="contorno">3 - LINHAS DE CONTORNO</a></th>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">outline</td>
+<td class="descricao">Define o estilo, a espessura e a cor da linha de contorno. Aceita de 1 a 3 valores.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdada</td>
+<td class="indicacao" rowspan="2">CSS2</td>
+<td class="browser" rowspan="2">IE&nbsp;--&nbsp;&nbsp;F&nbsp;1.5&nbsp;&nbsp;N&nbsp;--</td>
+</tr>
+<tr>
+<td>Valores: outline-style | outline-width | outline-color</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">outline-style</td>
+<td class="descricao">Define o estilo da linha de contorno.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdada</td>
+<td class="indicacao" rowspan="2">CSS2</td>
+<td class="browser" rowspan="2">IE&nbsp;--&nbsp;&nbsp;F&nbsp;1.5&nbsp;&nbsp;N&nbsp;--</td>
+</tr>
+<tr>
+<td>Valores: none | hidden | dotted | dashed | solid | double | groove | ridge | inset | outset</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">outline-width</td>
+<td class="descricao">Define a espessura da linha de contorno.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdada</td>
+<td class="indicacao" rowspan="2">CSS2</td>
+<td class="browser" rowspan="2">IE&nbsp;--&nbsp;&nbsp;F&nbsp;1.5&nbsp;&nbsp;N&nbsp;--</td>
+</tr>
+<tr>
+<td>Valores: thin | medium | thick | unids_css</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">outline-color</td>
+<td class="descricao">Define a cor da linha de contorno.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdada</td>
+<td class="indicacao" rowspan="2">CSS2</td>
+<td class="browser" rowspan="2">IE&nbsp;--&nbsp;&nbsp;F&nbsp;1.5&nbsp;&nbsp;N&nbsp;--</td>
+</tr>
+<tr>
+<td>Valores: nomecor | #rrggbb | #rgb | rgb(d,d,d) | rgb(d%,d%,d%) | invert</td>
+</tr>
+<!--  MARGENS  -->
+<tr>
+<th colspan="5"><a name="margens" id="margens">4 - MARGENS</a></th>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">margin</td>
+<td class="descricao">Define as 4 margens do elemento. Aceita de 1 a 4 valores.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdada</td>
+<td class="indicacao" rowspan="2">CSS1</td>
+<td class="browser" rowspan="2">IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;4</td>
+</tr>
+<tr>
+<td>Valores: margin-top | margin-right | margin-bottom | margin-left</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">margin-top<br>
+margin-right<br>
+margin-bottom<br>
+margin-left</td>
+<td class="descricao">Definem as margens superior, direita, inferior e esquerda.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdadas</td>
+<td class="indicacao" rowspan="2">CSS1</td>
+<td class="browser" rowspan="2">IE&nbsp;3&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;4<br>
+IE&nbsp;3&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;4<br>
+IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;4<br>
+IE&nbsp;3&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;4</td>
+</tr>
+<tr>
+<td>Valores: auto | unids_css | %</td>
+</tr>
+<!--  ESPAÇO EM BRANCO (PADDING)  -->
+<tr>
+<th colspan="5"><a name="padding" id="padding">5 - ESPAÇO EM BRANCO (PADDING)</a></th>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">padding</td>
+<td class="descricao">Define o espaço entre o conteúdo e os 4 limites do elemento. Aceita de 1 a 4 valores.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdada</td>
+<td class="indicacao" rowspan="2">CSS1</td>
+<td class="browser" rowspan="2">IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;4</td>
+</tr>
+<tr>
+<td>Valores: padding-top | padding-right | padding-bottom | padding-left</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">padding-top<br>
+padding-right<br>
+padding-bottom<br>
+padding-left</td>
+<td class="descricao">Definem o espaço entre o conteúdo e os limites superior, direito, inferior e esquerdo.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdadas</td>
+<td class="indicacao" rowspan="2">CSS1</td>
+<td class="browser" rowspan="2">IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;4</td>
+</tr>
+<tr>
+<td>Valores: unids_css | %</td>
+</tr>
+<!--  CLASSIFICAÇÃO (FORMA DE EXIBIÇÃO)  -->
+<tr>
+<th colspan="5"><a name="exibicao" id="exibicao">6 - CLASSIFICAÇÃO (FORMA DE EXIBIÇÃO)</a></th>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">clear</td>
+<td class="descricao">Define os lados de um elemento onde não são permitidos elementos flutuantes.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdada</td>
+<td class="indicacao" rowspan="2">CSS1</td>
+<td class="browser" rowspan="2">IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;4</td>
+</tr>
+<tr>
+<td>Valores: left | right | both | none</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">cursor</td>
+<td class="descricao">Define um formato para o cursor.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdada</td>
+<td class="indicacao" rowspan="2">CSS2</td>
+<td class="browser" rowspan="2">IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;6</td>
+</tr>
+<tr>
+<td>Valores: url | auto | crosshair | default | pointer | move | e-resize | ne-resize | nw-resize | n-resize |
+se-resize | sw-resize | s-resize | w-resize | text | wait | help</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">display</td>
+<td class="descricao">Define se um elemento deve ser apresentado e a forma de apresentação.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdada</td>
+<td class="indicacao" rowspan="2">CSS1</td>
+<td class="browser" rowspan="2">IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;4</td>
+</tr>
+<tr>
+<td>Valores: none | inline | block | list-item | run-in | compact | marker | table | inline-table | table-row-group |
+table-header-group | table-footer-group | table-row | table-column-group | table-column | table-cell |
+table-caption</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">float</td>
+<td class="descricao">Define o alinhamento de um elemento e controla o fluxo de texto ou de outros elementos ao seu
+redor.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdada</td>
+<td class="indicacao" rowspan="2">CSS1</td>
+<td class="browser" rowspan="2">IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;4</td>
+</tr>
+<tr>
+<td>Valores: left | right | none</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">position</td>
+<td class="descricao">Define a posição de um elemento como estática, relativa, absoluta ou fixa.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdada</td>
+<td class="indicacao" rowspan="2">CSS1</td>
+<td class="browser" rowspan="2">IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;4</td>
+</tr>
+<tr>
+<td>Valores: static | relative | absolute | fixed</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">visibility</td>
+<td class="descricao">Define se um elemento deve ficar visível ou invisível.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdada</td>
+<td class="indicacao" rowspan="2">CSS2</td>
+<td class="browser" rowspan="2">IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;4</td>
+</tr>
+<tr>
+<td>Valores: visible | hidden | collapse</td>
+</tr>
+<!--  POSICIONAMENTO  -->
+<tr>
+<th colspan="5"><a name="posicionamento" id="posicionamento">7 - POSICIONAMENTO</a></th>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">top<br>
+right<br>
+bottom<br>
+left</td>
+<td class="descricao">Definem a distância do elemento em relação ao limite do elemento que o contém.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdadas</td>
+<td class="indicacao" rowspan="2">CSS2</td>
+<td class="browser" rowspan="2">IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;4<br>
+IE&nbsp;5&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;6<br>
+IE&nbsp;5&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;6<br>
+IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;4</td>
+</tr>
+<tr>
+<td>Valores: auto | unids_css | %</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">vertical-align</td>
+<td class="descricao">Define o alinhamento vertical do elemlento.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdada</td>
+<td class="indicacao" rowspan="2">CSS1</td>
+<td class="browser" rowspan="2">IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;4</td>
+</tr>
+<tr>
+<td>Valores: baseline | sub | super | top | text-top | middle | bottom | text-bottom | unids_css | %</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">clip</td>
+<td class="descricao">Define a forma de um elemento.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdada</td>
+<td class="indicacao" rowspan="2">CSS2</td>
+<td class="browser" rowspan="2">IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;6</td>
+</tr>
+<tr>
+<td>Valores: auto | shape</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">overflow</td>
+<td class="descricao">Define o que deve ocorrer quando o conteúdo de um elemento excede sua área.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdada</td>
+<td class="indicacao" rowspan="2">CSS2</td>
+<td class="browser" rowspan="2">IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;6</td>
+</tr>
+<tr>
+<td>Valores: visible | hidden | scroll | auto</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">z-index</td>
+<td class="descricao">Define a ordem de apresentação dos elementos quando há sobreposição.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdada</td>
+<td class="indicacao" rowspan="2">CSS2</td>
+<td class="browser" rowspan="2">IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;6</td>
+</tr>
+<tr>
+<td>Valores: auto | número</td>
+</tr>
+<!--  DIMENSIONAMENTO  -->
+<tr>
+<th colspan="5"><a name="dimensionamento" id="dimensionamento">8 - DIMENSIONAMENTO</a></th>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">width<br>
+height</td>
+<td class="descricao">Definem a largura e a altura de um elemento.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdadas</td>
+<td class="indicacao" rowspan="2">CSS1</td>
+<td class="browser" rowspan="2">IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;4<br>
+IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;6</td>
+</tr>
+<tr>
+<td>Valores: auto | unids_css | %</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">max-width<br>
+max-height</td>
+<td class="descricao">Definem a largura máxima e a altura máxima de um elemento.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdadas</td>
+<td class="indicacao" rowspan="2">CSS2</td>
+<td class="browser" rowspan="2">IE&nbsp;--&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;6<br>
+IE&nbsp;--&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;6</td>
+</tr>
+<tr>
+<td>Valores: none | unids_css | %</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">min-width<br>
+min-height</td>
+<td class="descricao">Definem a largura mínima e a altura mínima de um elemento.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdadas</td>
+<td class="indicacao" rowspan="2">CSS2</td>
+<td class="browser" rowspan="2">IE&nbsp;--&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;6<br>
+IE&nbsp;--&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;6</td>
+</tr>
+<tr>
+<td>Valores: unids_css | %</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">line-height</td>
+<td class="descricao">Define a distância entre linhas de texto.</td>
+<td class="indicacao" rowspan="2">herdada</td>
+<td class="indicacao" rowspan="2">CSS1</td>
+<td class="browser" rowspan="2">IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;4</td>
+</tr>
+<tr>
+<td>Valores: normal | número | unids_css | %</td>
+</tr>
+<!-- FONTE -->
+<tr>
+<th colspan="5"><a name="fonte" id="fonte">9 - FONTE</a></th>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">font</td>
+<td class="descricao">Define vários valores da fonte.</td>
+<td class="indicacao" rowspan="2">herdada</td>
+<td class="indicacao" rowspan="2">CSS1</td>
+<td class="browser" rowspan="2">IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;4</td>
+</tr>
+<tr>
+<td>Valores: font-family | font-size/line-height | font-style | font-weight | font-variant | caption | icon | menu |
+message-box | small-caption | status-bar</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">font-family</td>
+<td class="descricao">Define o tipo de fonte.</td>
+<td class="indicacao" rowspan="2">herdada</td>
+<td class="indicacao" rowspan="2">CSS1</td>
+<td class="browser" rowspan="2">IE&nbsp;3&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;4</td>
+</tr>
+<tr>
+<td>Valores: family-name | generic-family</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">font-size</td>
+<td class="descricao">Define o tamanho da fonte.</td>
+<td class="indicacao" rowspan="2">herdada</td>
+<td class="indicacao" rowspan="2">CSS1</td>
+<td class="browser" rowspan="2">IE&nbsp;3&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;4</td>
+</tr>
+<tr>
+<td>Valores: xx-small | x-small | small | medium | large | x-large | xx-large | smaller | larger | unids_css | %</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">font-style</td>
+<td class="descricao">Define o estilo da fonte.</td>
+<td class="indicacao" rowspan="2">herdada</td>
+<td class="indicacao" rowspan="2">CSS1</td>
+<td class="browser" rowspan="2">IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;4</td>
+</tr>
+<tr>
+<td>Valores: normal | italic | oblique</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">font-weight</td>
+<td class="descricao">Define a espessura do traço da fonte.</td>
+<td class="indicacao" rowspan="2">herdada</td>
+<td class="indicacao" rowspan="2">CSS1</td>
+<td class="browser" rowspan="2">IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;4</td>
+</tr>
+<tr>
+<td>Valores: normal | bold | bolder | lighter | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">font-size-adjust</td>
+<td class="descricao">Define que o tamanho da fonte deve ser ajustado, caso o browser tenha de utilizar outro tipo de
+fonte que não o escolhido em font-family.</td>
+<td class="indicacao" rowspan="2">herdada</td>
+<td class="indicacao" rowspan="2">CSS2</td>
+<td class="browser" rowspan="2">IE&nbsp;--&nbsp;&nbsp;F&nbsp;--&nbsp;&nbsp;N&nbsp;--</td>
+</tr>
+<tr>
+<td>Valores: none | número</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">font-variant</td>
+<td class="descricao">Define se deve ser utilizado um tipo de fonte "small-caps" ou normal.</td>
+<td class="indicacao" rowspan="2">herdada</td>
+<td class="indicacao" rowspan="2">CSS1</td>
+<td class="browser" rowspan="2">IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;6</td>
+</tr>
+<tr>
+<td>Valores: normal | small-caps</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">font-stretch</td>
+<td class="descricao">Define uma contração ou expansão na largura da fonte.</td>
+<td class="indicacao" rowspan="2">herdada</td>
+<td class="indicacao" rowspan="2">CSS2</td>
+<td class="browser" rowspan="2">IE&nbsp;--&nbsp;&nbsp;F&nbsp;--&nbsp;&nbsp;N&nbsp;--</td>
+</tr>
+<tr>
+<td>Valores: normal | wider | narrower | ultra-condensed | extra-condensed | condensed | semi-condensed | semi-expanded
+| expanded | extra-expanded | ultra-expanded</td>
+</tr>
+<!--   TEXTO  -->
+<tr>
+<th colspan="5"><a name="texto" id="texto">10 - TEXTO</a></th>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">color</td>
+<td class="descricao">Define a cor do texto.</td>
+<td class="indicacao" rowspan="2">herdada</td>
+<td class="indicacao" rowspan="2">CSS1</td>
+<td class="browser" rowspan="2">IE&nbsp;3&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;4</td>
+</tr>
+<tr>
+<td>Valores: nomecor | #rrggbb | #rgb | rgb(d,d,d) | rgb(d%,d%,d%)</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">text-align</td>
+<td class="descricao">Define o alinhamento do texto.</td>
+<td class="indicacao" rowspan="2">herdada</td>
+<td class="indicacao" rowspan="2">CSS1</td>
+<td class="browser" rowspan="2">IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;4</td>
+</tr>
+<tr>
+<td>Valores: left | right | center | justify</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">text-indent</td>
+<td class="descricao">Define um deslocamento para a direita ou esquerda da primeira linha do texto.</td>
+<td class="indicacao" rowspan="2">herdada</td>
+<td class="indicacao" rowspan="2">CSS1</td>
+<td class="browser" rowspan="2">IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;4</td>
+</tr>
+<tr>
+<td>Valores: unids_css | %</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">text-decoration</td>
+<td class="descricao">Define um efeito decorativo para o texto.</td>
+<td class="indicacao" rowspan="2">herdada</td>
+<td class="indicacao" rowspan="2">CSS1</td>
+<td class="browser" rowspan="2">IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;4</td>
+</tr>
+<tr>
+<td>Valores: none | underline | overline | line-through | blink</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">text-transform</td>
+<td class="descricao">Define que o texto deve ser capitalizado ou ser exibido todo em maiúsculas ou minúsculas.</td>
+<td class="indicacao" rowspan="2">herdada</td>
+<td class="indicacao" rowspan="2">CSS1</td>
+<td class="browser" rowspan="2">IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;4</td>
+</tr>
+<tr>
+<td>Valores: none | capitalize | uppercase | lowercase</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">letter-spacing<br>
+word-spacing</td>
+<td class="descricao">Definem um aumento ou diminuição no espaço entre os caracteres ou entre as palavras.</td>
+<td class="indicacao" rowspan="2">herdadas</td>
+<td class="indicacao" rowspan="2">CSS1</td>
+<td class="browser" rowspan="2">IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;6<br>
+IE&nbsp;6&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;6</td>
+</tr>
+<tr>
+<td>Valores: normal | unids_css</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">white-space</td>
+<td class="descricao">Define o tratamento a ser dado ao espaço em branco existente dentro de um elemento.</td>
+<td class="indicacao" rowspan="2">herdada</td>
+<td class="indicacao" rowspan="2">CSS1</td>
+<td class="browser" rowspan="2">IE&nbsp;5&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;4</td>
+</tr>
+<tr>
+<td>Valores: normal | pre | nowrap</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">direction</td>
+<td class="descricao">Define a direção em que é escrito o texto. Da esquerda para a direita ou da direita para a
+esquerda.</td>
+<td class="indicacao" rowspan="2">herdada</td>
+<td class="indicacao" rowspan="2">CSS2</td>
+<td class="browser" rowspan="2">IE&nbsp;6&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;6</td>
+</tr>
+<tr>
+<td>Valores: ltr | rtl</td>
+</tr>
+<!--  LISTAS E MARCADORES -->
+<tr>
+<th colspan="5"><a name="listas" id="listas">11 - LISTAS E MARCADORES</a></th>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">list-style</td>
+<td class="descricao">Define todos os parâmetros referentes a uma lista. Aceita de 1 a 3 valores.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdada</td>
+<td class="indicacao" rowspan="2">CSS1</td>
+<td class="browser" rowspan="2">IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;6</td>
+</tr>
+<tr>
+<td>Valores: list-style-type | list-style-position | list-style-image</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">list-style-type</td>
+<td class="descricao">Define o tipo de marcador de item da lista.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdada</td>
+<td class="indicacao" rowspan="2">CSS1</td>
+<td class="browser" rowspan="2">IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;4</td>
+</tr>
+<tr>
+<td>Valores: none | disc | circle | square | decimal | decimal-leading-zero | lower-roman | upper-roman | lower-alpha |
+upper-alpha | lower-greek | lower-latin | upper-latin | hebrew | armenian | georgian | cjk-ideographic | hiragana |
+katakana | hiragana-iroha | katakana-iroha</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">list-style-position</td>
+<td class="descricao">Define a posição do marcador de item da lista.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdada</td>
+<td class="indicacao" rowspan="2">CSS1</td>
+<td class="browser" rowspan="2">IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;6</td>
+</tr>
+<tr>
+<td>Valores: inside | outside</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">list-style-image</td>
+<td class="descricao">Define a imagem a ser utilizada como marcador de item da lista.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdada</td>
+<td class="indicacao" rowspan="2">CSS1</td>
+<td class="browser" rowspan="2">IE&nbsp;4&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;6</td>
+</tr>
+<tr>
+<td>Valores: none | url</td>
+</tr>
+<!--  TABELAS   -->
+<tr>
+<th colspan="5"><a name="tabelas" id="tabelas">12 - TABELAS</a></th>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">border-collapse</td>
+<td class="descricao">Define se os traços das bordas serão fundidos ou mantidos separados.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdada</td>
+<td class="indicacao" rowspan="2">CSS2</td>
+<td class="browser" rowspan="2">IE&nbsp;5&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;7</td>
+</tr>
+<tr>
+<td>Valores: collapse | separate</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">border-spacing</td>
+<td class="descricao">Define a distância entre as bordas de células adjacentes. Só aplicável quando border-collapse for
+separate.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdada</td>
+<td class="indicacao" rowspan="2">CSS2</td>
+<td class="browser" rowspan="2">IE&nbsp;5M&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;6</td>
+</tr>
+<tr>
+<td>Valores: unids_css</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">empty-cells</td>
+<td class="descricao">Define se as células sem conteúdo visível devem ter bordas ou não. Só aplicável quando
+border-collapse for separate.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdada</td>
+<td class="indicacao" rowspan="2">CSS2</td>
+<td class="browser" rowspan="2">IE&nbsp;5M&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;6</td>
+</tr>
+<tr>
+<td>Valores: show | hide</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">caption-side</td>
+<td class="descricao">Define a posição da legenda na tabela.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdada</td>
+<td class="indicacao" rowspan="2">CSS2</td>
+<td class="browser" rowspan="2">IE&nbsp;5M&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;6</td>
+</tr>
+<tr>
+<td>Valores: top | bottom | left | right</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">table-layout</td>
+<td class="descricao">Define como será desenhada a tabela</td>
+<td class="indicacao" rowspan="2">não<br>
+herdada</td>
+<td class="indicacao" rowspan="2">CSS2</td>
+<td class="browser" rowspan="2">IE&nbsp;5&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;6</td>
+</tr>
+<tr>
+<td>Valores: auto | fixed</td>
+</tr>
+<!-- GERAÇÃO DE CONTEÚDO -->
+<tr>
+<th colspan="5"><a name="geracaoconteudo" id="geracaoconteudo">13 - GERAÇÃO DE CONTEÚDO</a></th>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">content</td>
+<td class="descricao">Gera conteúdo para um elemento. Utilizada com os pseudo-elementos :before e :after.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdada</td>
+<td class="indicacao" rowspan="2">CSS2</td>
+<td class="browser" rowspan="2">IE&nbsp;--&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;6</td>
+</tr>
+<tr>
+<td>Valores: string | url | counter(name) | counter(name, list-style-type) | counters(name, string) | counters(name,
+string, list-style-type) | attr(X) | open-quote | close-quote | no-open-quote | no-close-quote</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">counter-increment</td>
+<td class="descricao">Define em quanto será incrementado o contador a cada ocorrência de um seletor.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdada</td>
+<td class="indicacao" rowspan="2">CSS2</td>
+<td class="browser" rowspan="2">IE&nbsp;--&nbsp;&nbsp;F&nbsp;--&nbsp;&nbsp;N&nbsp;--</td>
+</tr>
+<tr>
+<td>Valores: none | número identificador</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">counter-reset</td>
+<td class="descricao">Define o valor a a ser atribuído ao contador a cada ocorrência de um seletor.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdada</td>
+<td class="indicacao" rowspan="2">CSS2</td>
+<td class="browser" rowspan="2">IE&nbsp;--&nbsp;&nbsp;F&nbsp;--&nbsp;&nbsp;N&nbsp;--</td>
+</tr>
+<tr>
+<td>Valores: none | número identificador</td>
+</tr>
+<tr>
+<td class="propriedade" rowspan="2">quotes</td>
+<td class="descricao">Define o estilo das aspas.</td>
+<td class="indicacao" rowspan="2">não<br>
+herdada</td>
+<td class="indicacao" rowspan="2">CSS2</td>
+<td class="browser" rowspan="2">IE&nbsp;--&nbsp;&nbsp;F&nbsp;1&nbsp;&nbsp;N&nbsp;6</td>
+</tr>
+<tr>
+<td>Valores: none | string string</td>
+</tr>
+</tbody></table>
+<!-- RODAPÉ -->
+<script type="text/javascript">
+<!--
+  criarRodape(600, 0, "../");
+// -->
+</script><div id="rodape"><a href="http://jigsaw.w3.org/css-validator/validator?uri=http://www.abpsoft.com/criacaoweb/cssguiaref.html"><img src="css_guia_arquivos/valid-css-blue.png" alt="Valid CSS!" title="Valid CSS!" width="88" height="31"></a><a href="http://validator.w3.org/check?uri=referer"><img src="css_guia_arquivos/valid-html401-blue.png" alt="Valid HTML 4.01 Strict" title="Valid HTML 4.01 Strict" width="88" height="31"></a><div><a href="http://www.abpsoft.com/mapasite.html">| Mapa do Site |&nbsp;</a> Copyright © 2006 Abpsoft. Todos os direitos reservados.</div></div>
+</body></html>

@@ -1,0 +1,234 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>MySQLi</title>
+</head>
+
+<body>
+
+<pre>
+
+Queries
+
+Executar uma query é muito simples no PHP. Vejamos uma query de INSERT.
+
+Exemplo:
+<?
+# Inicia o objeto MySQLi
+$dbcon = mysqli_init();
+
+# Faz a conexão com o banco
+$dbcon->real_connect($hostname, $username, $password, $database);
+
+# A query
+$Query = "
+INSERT INTO
+  Tabela
+SET
+  Campo = 'Valor'";
+
+# Executa a query. O INSERT foi feito
+$dbcon->query($Query);
+?>
+
+Veja que só foi usado 3 funções. Uma para inicializar o objeto, outra para conectar ao banco e mais uma para executar a query.
+
+Lembre-se que é interessante colocar a conexão num arquivo de include.
+
+Vamos ver agora o exemplo de um SELECT.
+
+Exemplo:
+<?
+# Inicia o objeto MySQLi
+$dbcon = mysqli_init();
+
+# Faz a conexão
+$dbcon->real_connect($hostname, $username, $password, $database);
+
+# A query
+$Query = "
+SELECT
+  Campo
+FROM
+  Tabela";
+
+# Executa a query pegando o resultado em $rs (pois se trata de um SELECT)
+$rs = $dbcon->query($Query);
+
+# O $rs->fetch_assoc() retornará uma linha da tabela a cada execução
+# Por isso ele é colocado num while
+while ( $row = $rs->fetch_assoc() ) {
+  echo $row['Campo']; // Valor do Campo
+}
+?>
+
+No caso acima, foi necessário mais uma função para colocar o valor do banco no array $row.
+
+Vamos estudar um exemplo de uma coleta de nomes e e-mails de uma tabela cadastral.
+
+Exemplo:
+<?
+include_once('conexao.php');
+
+$Query = "
+SELECT
+  Nome, E-mail
+FROM
+  Cadastro";
+
+$rs = $dbcon->query($Query);
+
+# Imprime os dados
+while ( $row = $rs->fetch_assoc() ) {
+  echo $row['Nome'] . " - " $row['E-mail'] . "<br />";
+}
+?>
+
+
+
+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+
+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+
+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+
+
+
+
+Extensão MySQL Melhorada
+
+    * Introdução
+    * Overview
+    * Instalação/Configuração
+          o Dependências
+          o Instalação
+          o Configurações em Execução
+          o Tipos Resource
+    * Constantes pré-definidas
+    * The MySQLi Extension Function Summary
+    * MySQLi — A classe MySQLi
+          o mysqli->affected_rows — Retorna o número de linhas afetadas pela operação MySQL anterior
+          o mysqli::autocommit — Ativa ou desativa o salvar automaticamente as modificações no banco de dados
+          o mysqli::change_user — Modifica o usuário para a conexão com o banco de dados especificada
+          o mysqli::character_set_name — Retorna o conjunto de caracteres padrão para a conexão com o banco de dados
+          o mysqli_close — Fecha uma conexão aberta anteriormente com o banco de dados
+          o mysqli::commit — Salva a transação atual
+          o mysqli_connect_errno — Retorna o código de erro da ultima chamada a função connect
+          o mysqli_connect_error — Retorna uma string descrevendo o ultimo erro da função connect
+          o mysqli_connect — Abre uma nova conexão com o servidor MySQL
+          o mysqli_debug — Realiza operações de debug
+          o mysqli::dump_debug_info — Descarrega informação de debug no log
+          o mysqli->errno — Retorna o código de erro para a chamada de função mais recente
+          o mysqli->error — Retorna uma string descrevendo o ultimo erro
+          o mysqli_field_count — Retorna o número de colunas para a consulta mais recente
+          o mysqli::get_cache_stats — Returns client Zval cache statistics
+          o mysqli::get_charset — Returns a character set object
+          o mysqli::get_client_info — Retorna a versão do cliente MySQL como uma string
+          o mysqli::get_client_stats — Returns client per-process statistics
+          o mysqli::get_client_version — Obtém informação sobre o cliente MySQL
+          o mysqli::get_connection_stats — Returns statistics about the client connection
+          o mysqli_get_host_info — Retorna uma string representando o tipo da conexão usada
+          o mysqli->protocol_version — Retorna a versão do protocolo MySQL usada
+          o mysqli->server_info — Retorna a versão do servidor MySQL
+          o mysqli->server_version — Retorna a versão do servidor MySQL como um integer
+          o mysqli::get_warnings — Get result of SHOW WARNINGS
+          o mysqli_info — Recupera informação sobre a mais recente query executada
+          o mysqli_init — Inicializa a MySQLi e retorna um resource para usar com mysqli_real_connect()
+          o mysqli_insert_id — Retorna o id gerado automaticamente na última consulta
+          o mysqli::kill — Solicita ao servidor o encerramento de um thread do MySQL
+          o mysqli::more_results — Verifica se há mais algum resultado de uma multi query
+          o mysqli::multi_query — Performs a query on the database
+          o mysqli::next_result — Prepara o próximo resultado de multi_query
+          o mysqli::options — Set options
+          o mysqli::ping — Pings a server connection, or tries to reconnect if the connection has gone down
+          o mysqli::poll — Poll connections
+          o mysqli::prepare — Prepare a SQL statement for execution
+          o mysqli::query — Performs a query on the database
+          o mysqli::real_connect — Opens a connection to a mysql server
+          o mysqli::real_escape_string — Escapes special characters in a string for use in a SQL statement, taking into account the current charset of the connection
+          o mysqli::real_query — Execute an SQL query
+          o mysqli::reap_async_query — Get result from async query
+          o mysqli::rollback — Rolls back current transaction
+          o mysqli::select_db — Selects the default database for database queries
+          o mysqli::set_charset — Sets the default client character set
+          o mysqli::set_local_infile_default — Unsets user defined handler for load local infile command
+          o mysqli::set_local_infile_handler — Set callback function for LOAD DATA LOCAL INFILE command
+          o mysqli->sqlstate — Returns the SQLSTATE error from previous MySQL operation
+          o mysqli::ssl_set — Used for establishing secure connections using SSL
+          o mysqli::stat — Gets the current system status
+          o mysqli::stmt_init — Initializes a statement and returns an object for use with mysqli_stmt_prepare
+          o mysqli::store_result — Transfers a result set from the last query
+          o mysqli::thread_id — Returns the thread ID for the current connection
+          o mysqli::thread_safe — Returns whether thread safety is given or not
+          o mysqli::use_result — Initiate a result set retrieval
+          o mysqli::warning_count — Returns the number of warnings from the last query for the given link
+    * MySQLi_STMT — A classe MySQLi_STMT
+          o mysqli_stmt->affected_rows — Returns the total number of rows changed, deleted, or inserted by the last executed statement
+          o mysqli_stmt::attr_get — Used to get the current value of a statement attribute
+          o mysqli_stmt::attr_set — Used to modify the behavior of a prepared statement
+          o mysqli_stmt::bind_param — Passa variáveis para um preparado comando como parâmetros
+          o mysqli_stmt::bind_result — Passa variáveis para um preparado comando por resultado armazenado
+          o mysqli_stmt::close — Closes a prepared statement
+          o mysqli_stmt::data_seek — Seeks to an arbitrary row in statement result set
+          o mysqli_stmt->errno — Returns the error code for the most recent statement call
+          o mysqli_stmt->error — Returns a string description for last statement error
+          o mysqli_stmt->execute — Executa uma preparada query
+          o mysqli_stmt::fetch — Obtém resultados de um preparado comando e os coloca nas determinadas variáveis
+          o mysqli_stmt->field_count — Returns the number of field in the given statement
+          o mysqli_free_result — Libera a memória associada ao resultado
+          o mysqli_stmt::get_warnings — Get result of SHOW WARNINGS
+          o mysqli_stmt->insert_id — Get the ID generated from the previous INSERT operation
+          o mysqli_stmt::num_rows — Return the number of rows in statements result set
+          o mysqli_stmt->param_count — Returns the number of parameter for the given statement
+          o mysqli_stmt::prepare — Prepare a SQL statement for execution
+          o mysqli_stmt::reset — Resets a prepared statement
+          o mysqli_stmt::result_metadata — Returns result set metadata from a prepared statement
+          o mysqli_stmt::send_long_data — Send data in blocks
+          o mysqli_stmt::sqlstate — Returns SQLSTATE error from previous statement operation
+          o mysqli_stmt::store_result — Transfers a result set from a prepared statement
+    * MySQLi_Result — A classe MySQLi_Result
+          o mysqli_result->current_field — Get current field offset of a result pointer
+          o mysqli_result::data_seek — Ajusta o ponteiro do resultado para uma linha arbritaria no conjunto de resutados
+          o mysqli_result::fetch_all — Fetches all result rows as an associative array, a numeric array, or both
+          o mysqli_fetch_array — Obtem uma linha do resultado como uma matriz associativa, numérica, ou ambas
+          o mysqli_result::fetch_assoc — Obtem uma linha do conjunto de resultados como uma matriz associativa
+          o mysqli_fetch_field_direct — Obtem meta dados para um único campo
+          o mysqli_result::fetch_field — Retorna o próximo campo no conjunto de resultados
+          o mysqli_result::fetch_fields — Retorna uma matriz de objetos representando os campos em um conjunto de resultados
+          o mysqli_fetch_object — Retorna a linha atual do conjunto de resultados como um objeto
+          o mysqli_result::fetch_row — Obtém uma linha do resultado como uma matriz numerada
+          o mysqli_result->field_count — Get the number of fields in a result
+          o mysqli_field_seek — Move o ponteiro do resultado para um campo especificado
+          o mysqli_result::free — Frees the memory associated with a result
+          o mysqli_result->lengths — Returns the lengths of the columns of the current row in the result set
+          o mysqli_result->num_rows — Gets the number of rows in a result
+    * MySQLi_Driver — A classe MySQLi_Driver
+          o mysqli_driver::embedded_server_end — Stop embedded server
+          o mysqli_driver::embedded_server_start — Initialize and start embedded server
+    * Apelidos e Funções obsoletas da Mysqli
+          o mysqli_bind_param — Apelido para mysqli_stmt_bind_param
+          o mysqli_bind_result — Apelido para mysqli_stmt_bind_result
+          o mysqli_client_encoding — Apelido para mysqli_character_set_name
+          o mysqli_disable_reads_from_master — Desabilita leitura do master
+          o mysqli_disable_rpl_parse — Desabilita análise RPL
+          o mysqli_enable_reads_from_master — Habilita leitura do master
+          o mysqli_enable_rpl_parse — Habilita análise RPL
+          o mysqli_escape_string — Apelido para mysqli_real_escape_string
+          o mysqli_execute — Apelido para mysqli_stmt_execute
+          o mysqli_fetch — Apelido para mysqli_stmt_fetch
+          o mysqli_get_metadata — Apelido para mysqli_stmt_result_metadata
+          o mysqli_master_query — Força execução de uma query no master numa configuração master/slave
+          o mysqli_param_count — Alias for mysqli_stmt_param_count
+          o mysqli_report — Enables or disables internal report functions
+          o mysqli_rpl_parse_enabled — Check if RPL parse is enabled
+          o mysqli_rpl_probe — RPL probe
+          o mysqli_rpl_query_type — Returns RPL query type
+          o mysqli_send_long_data — Alias for mysqli_stmt_send_long_data
+          o mysqli_send_query — Send the query and return
+          o mysqli_set_opt — Alias of mysqli_options
+          o mysqli_slave_query — Force execution of a query on a slave in a master/slave setup
+
+</pre>
+
+</body>
+</html>

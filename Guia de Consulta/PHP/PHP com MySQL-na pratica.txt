@@ -1,0 +1,80 @@
+PHP COM MYSQL
+
+Utilizando a função mysqli() // versão substituta e melhorada da função mysql(), esta função trabalha com o conceito de Orientação à Objetos. ( a documentação desta função se encontra no arquivo mysqli.html)
+
+A Conexão:
+
+  real_connect( "HOST",  "USUÁRIO", "SENHA", "NOME-do-BANCO");
+
+Consultas
+Executar uma consulta é muito simples . Vejamos uma query de INSERT.
+
+Exemplo:
+<?php
+$con = mysqli_init();
+$con->real_connect("localhost", "root", "mysql", "loja");
+
+// O SQL
+$sql = "INSERT INTO  Cliente(nome) Values('Rafael')";
+
+// Executa a query. O INSERT foi feito
+$con->query($sql);
+?>
+
+Veja que só foi usado 3 funções. Uma para inicializar o objeto, outra para conectar ao banco e mais uma para executar a query.
+
+Vamos ver agora o exemplo de um SELECT.
+
+Exemplo:
+<?php
+$hostname = "localhost";
+$username = "root";
+$password = "mysql";
+$database = "loja";
+
+$con = mysqli_init();
+$con->real_connect($hostname, $username, $password, $database);
+
+// A query
+$Query = "SELECT  * FROM  cliente";
+
+// Executa a query pegando o resultado em $rs (pois se trata de um SELECT)
+$rs = $con->query($Query);
+
+// O $rs->fetch_assoc() retornará uma linha da tabela a cada execução
+// Por isso ele é colocado num while
+while ( $row = $rs->fetch_assoc() ) {
+  echo $row['Campo']; // Valor do Campo
+}
+?>
+
+No caso acima, foi necessário mais uma função para colocar o valor do banco no array $row, e a conexão foi feita por meio de variáveis.
+
+Vamos estudar um exemplo de uma coleta de nomes e e-mails de uma tabela cadastral.
+Exemplo:
+
+<?php
+$hostname = "localhost";
+$username = "root";
+$password = "mysql";
+$database = "loja";
+
+$con = mysqli_init();
+$con->real_connect($hostname, $username, $password, $database);
+
+// A query
+$Query = "SELECT  Nome, E-mail FROM  cliente";
+
+// Executa a query pegando o resultado em $rs
+$rs = $con->query($Query);
+
+// Imprime os dados
+while ( $row = $rs->fetch_assoc() ) {
+  echo $row['Nome'] . " - " $row['E-mail'] . "";
+}
+?>
+// esse script mostra todos os nome e e-mails cadastrados no BD.
+
+====================================================================
+PHP by RKAUSTCHR
+====================================================================  
