@@ -1,6 +1,6 @@
 <?php
 
-$stri = "araraquara";
+//$stri = "araraquara";
 
 function conta_letra($sequencia){
 	$um = 1;
@@ -21,7 +21,7 @@ function conta_letra($sequencia){
 	return $vetor_letras;
 }
 
-print_r(conta_letra($stri));
+//print_r(conta_letra($stri));
 
 /*
 	Obs.:
