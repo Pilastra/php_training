@@ -20,4 +20,18 @@ foreach($vet as $valor){
 	echo $valor . "<br><br>";
 } 
 
+/*
+	Obs.:
+	Você não entendeu bem a ideia desse exercício hsauhasuhsa
+	A ideia era fazer os valores das variáveis virarem variáveis, por exemplo com uma variável $nome = 'jailson', fazer $jailson.
+	O operador do php que faz isso é $$ que se chama variável variável 
+
+	ex:
+
+	$nome = 'jailson';
+	$$nome = 'pai de família';
+	echo $jailson;  // Vai escrever pai de família
+*/
+
+
 ?>
