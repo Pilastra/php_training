@@ -1,0 +1,88 @@
+<html>
+<head>
+<title> Exercício 26</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>  
+  <div class="container">
+  
+  <h2><mark style="background-color:#e6e6fa;">
+		<strong>Informativo via correio convencional</strong>                  <br>
+		Obs.: É obrigatório o preechimento de todos os campos.<br></mark></h2>
+
+      <form class="form-signin" action="ex26.php" method="post">
+        
+		Nome:
+        <input type="text" name="nome" class="form-control" placeholder="Nome" required autofocus>
+        Email:
+		<input type="email" name="email" class="form-control" placeholder="Email" required>
+        
+		Senha:
+		<input type="password" name="senha" class="form-control" placeholder="Senha" required>
+		
+		Estado:
+		<input list="estados" name="estado" class="form-control" placeholder="" required>
+		<datalist id="estados">
+			<option value="AC">	 
+			<option value="AL">	 
+			<option value="AP">	 
+			<option value="AM">	 
+			<option value="BA">	 
+			<option value="CE">	 
+			<option value="DF">	 
+			<option value="ES">	 
+			<option value="GO">	 
+			<option value="MA">	 
+			<option value="MT">	 
+			<option value="MS">	 
+			<option value="MG">	 
+			<option value="PA">	 
+			<option value="PB">	 
+			<option value="PR">	 
+			<option value="PE">	 
+			<option value="PI">	 
+			<option value="RJ">	 
+			<option value="RN">	 
+			<option value="RS">	 
+			<option value="RO">	 
+			<option value="RR">	 
+			<option value="SC">	 
+			<option value="SP">	 
+			<option value="SE">	 
+			<option value="TO">	
+		</datalist>
+		
+		Criticas e Sugestoes:
+		<textarea type="text" name="critsuges" class="form-control" placeholder="Sugestoes e Criticas? Escreva aqui." rows="10" cols="30" required></textarea>
+		
+		<div class="checkbox">
+		Marque os laboratórios que você deseja receber infomações:<br>
+          <label>
+			<input type="checkbox" name="op1" value="LAFES">Laboratório de Ferramentas para Desenvolvimento de Sistemas - <b>LAFES</b> <br>
+			<input type="checkbox" name="op2" value="LGR">Laboratório de Gestão de Redes - <b>LGR</b><br>
+			<input type="checkbox" name="op3" value="LIS">Laboratório de Integração de Sistemas - <b>LIS</b><br>
+			<input type="checkbox" name="op4" value="LQS">Laboratório de Qualidade de Software - <b>LQS</b><br>			
+          </label>
+        </div>
+        
+      Você aceita rreceber outras informações sobre cursos da Unisinos?<br>
+	  <input type="radio" name="resp" value="sim">Sim
+	  <input type="radio" name="resp" value="nao">Não<br><br>
+		
+		<button class="btn btn-lg btn-primary " type="submit">Enviar</button>
+		<button class="btn btn-lg btn-primary " type="reset">Limpar</button><br><br>
+	  </form>
+	  
+	 
+
+    </div> <!-- /container -->
+</form>
+</body>
+</html>
