@@ -25,4 +25,32 @@ echo '</div>
 </body>
 </html>';
 
+
+
+/*
+	Obs1: O Código HTML não precisa ficar em echo, lembra que o php e html podem ficar juntos? Então, o ideal seria todo o HTML focar fora, e usar o php só pra exibir os dados. EX:
+
+		<html>
+		<head>
+		<title> Exercício 24</title>
+		...       
+		      
+		Certificamos que o aluno <strong> <?= $_POST['nome']; ?> </strong><br>
+		Participou do curso de <strong> <?php echo $_POST['curso']; ?> </strong> que ocorreu entre os dias 17 a 21 de Setembro.
+
+		</div>
+		
+		...
+
+		</html>
+
+	
+	Obs2: Cuidado com a codificação da página, senão os acentos e caracteres especiais ficam cagados:	Ciência da Computa�ão
+		Salve seu arquivo sempre como UTF-8 e adicione a tag HTML: <meta charset="UTF-8">
+
+
+	Obs3: Bootstrap ++ :)
+
+*/
+
 ?>

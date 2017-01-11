@@ -45,4 +45,23 @@ echo '</td><td>' . $_POST['resp'] . '
 </html>
 ';
 
+
+/*
+
+	Obs1: Seu form tinha 2 </form> tem que tomar cuidado com as tags pra não cagar a página
+
+	Ob2: Dica pra quando usar checkbox, use o name do componente como um vetor, por exemplo: 
+			<input type="checkbox" name="op[]" value="LAFES">Laboratório de Ferramentas para Desenvolvimento de Sistemas - <b>LAFES</b> <br>
+			<input type="checkbox" name="op[]" value="LGR">Laboratório de Gestão de Redes - <b>LGR</b><br>
+			<input type="checkbox" name="op[]" value="LIS">Laboratório de Integração de Sistemas - <b>LIS</b><br>
+			<input type="checkbox" name="op[]" value="LQS">Laboratório de Qualidade de Software - <b>LQS</b><br>
+
+		Assim quando você pegar a resposta do php vai ter um vetor op aou invés de uma variável pra cada item ;)
+
+		Use print_r pra testar como os dados estão vindo pra sua página:
+			echo '<pre>';
+			print_r($_POST);
+
+*/
+
 ?>
