@@ -32,5 +32,9 @@ echo '</body></html>'
 /*
 	Obs.: Faltou o da página não encontrada
 
+	Obs2: A carater de curiosidade, a função do PHP que redireciona a página é: 
+				header("Location: página.php");
+			Mas essa função só pode ser usada se não tiver nenhuma saida de texto ( echo ou print ) antes dela.
+
 */
 ?>
