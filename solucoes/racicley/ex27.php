@@ -28,4 +28,9 @@ if($_GET['nome'] == 'galeria'){
 }
 
 echo '</body></html>'
+
+/*
+	Obs.: Faltou o da página não encontrada
+
+*/
 ?>
